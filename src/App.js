@@ -75,7 +75,7 @@ const initialstate = {
   }
   onSubmit = () => {
     this.setState({imageURL:this.state.input});
-    fetch('https://quiet-dawn-14948.herokuapp.com/imageurl', {
+    fetch('http://localhost:3000/imageurl', {
       method: 'post',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
@@ -85,7 +85,7 @@ const initialstate = {
     .then(response => response.json())
     .then(response => {
       if (response) {
-        fetch('https://quiet-dawn-14948.herokuapp.com/image', {
+        fetch('http://localhost:3000/image', {
           method: 'put',
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify({
